@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Tapper</string>
+    <string name="welcome">Welcome to</string>
+    <string name="google">Sign in with Google </string>
+    <string name="notification">Notification Permission </string>
+    <string name="nfc">Near field communication Permission </string>
+    <string name="camera">Camera Permission </string>
+    <string name="storage">Read external storage Permission </string>
+    <string name="privacy">By using the app, you accept our Terms of Service\nand acknowledge reading the Privacy Policy</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_services">Terms of Service</string>
+    <string name="google_permission">You need sign in with Google</string>
 </resources>
