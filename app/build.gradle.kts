@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -54,9 +55,19 @@ dependencies {
 
 //    Animation
     implementation("androidx.compose.animation:animation:1.4.3")
+//    FIrebase
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    implementation("com.google.firebase:firebase-auth")
+
+
+    implementation("com.google.firebase:firebase-firestore")
 
 
     val nav_version = "2.8.0"
+
+
+    implementation("com.google.firebase:firebase-analytics")
 
     // Jetpack Compose integration
     implementation("androidx.navigation:navigation-compose:$nav_version")

@@ -78,5 +78,26 @@ val figmaTypography = Typography(
         fontWeight = FontWeight(500),
         color = Color(0xFFFFFFFF),
     ),
+
+    bodyMedium = TextStyle(
+        fontSize = 24.sp,
+        fontFamily = bodyFontFamily,
+        fontWeight = FontWeight(600),
+        color = Color(0xFF5C5C5C),
+
+    ),
+
+    labelLarge = TextStyle(
+        fontSize = 28.sp,
+        fontFamily = bodyFontFamily,
+        fontWeight = FontWeight(600),
+        color = Color(0xFF000000),
+    ),
+    titleMedium = TextStyle(
+        fontSize = 20.sp,
+        fontFamily = bodyFontFamily,
+        fontWeight = FontWeight(600),
+        color = Color(0xFFFFFFFF),
+    )
 )
 

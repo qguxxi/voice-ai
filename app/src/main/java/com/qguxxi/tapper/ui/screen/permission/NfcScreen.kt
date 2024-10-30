@@ -1,9 +1,9 @@
 package com.qguxxi.tapper.ui.screen.permission
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -14,23 +14,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.qguxxi.tapper.R
 import com.qguxxi.tapper.ui.components.button.PermissionButton
 import com.qguxxi.tapper.ui.components.under.PrivacyPolicy
 import com.qguxxi.tapper.ui.theme.figmaTypography
 
 @Composable
-fun NotificationPerScreen(modifier: Modifier = Modifier) {
+fun NfcPerScreen(modifier: Modifier = Modifier) {
     Surface(
-        modifier =  Modifier.fillMaxSize().background(Color(0xFFDBDBDB))
+        modifier =  Modifier.fillMaxSize()
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
+            modifier = modifier.fillMaxSize()
         ) {
             Spacer(modifier = Modifier.weight(3f))
             Icon(
-                imageVector = ImageVector.vectorResource(id = R.drawable.bumel_1),
+                imageVector = ImageVector.vectorResource(id = R.drawable.block_1),
                 contentDescription = null,
                 tint = Color.Unspecified
             )
@@ -40,12 +41,15 @@ fun NotificationPerScreen(modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.weight(5f))
             PermissionButton(
                 permClick = { /*TODO*/ },
-                idIcon = R.drawable.notification,
-                idString = R.string.notification)
+                idIcon = R.drawable.nfc,
+                idString = R.string.nfc_per,
+                modifier = Modifier.align(Alignment.CenterHorizontally).width(320.dp),
+                
+                )
             PrivacyPolicy(
                 privacyOnClick = { /*TODO*/ },
                 termServiceOnClick = { /*TODO*/ },
-                stringIdRes = R.string.notification_permission,
+                stringIdRes = R.string.nfc_permission,
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             )
         }
@@ -54,6 +58,6 @@ fun NotificationPerScreen(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun NotificationPreview() {
-    NotificationPerScreen()
+private fun NfcPreview() {
+    NfcPerScreen()
 }
