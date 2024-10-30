@@ -3,11 +3,19 @@
     <string name="welcome">Welcome to</string>
     <string name="google">Sign in with Google </string>
     <string name="notification">Notification Permission </string>
-    <string name="nfc">Near field communication Permission </string>
+    <string name="nfc">Nfc Permission </string>
     <string name="camera">Camera Permission </string>
     <string name="storage">Read external storage Permission </string>
     <string name="privacy">By using the app, you accept our Terms of Service\nand acknowledge reading the Privacy Policy</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="terms_services">Terms of Service</string>
     <string name="google_permission">You need sign in with Google</string>
+    <string name="nfc_permission">You need accept Nfc permission</string>
+    <string name="notification_permission">You need accept notification permission</string>
+    <string name="nfc_per">Near field communication permission</string>
+    <string name="nfc_title">Quick Share with NFC</string>
+    <string name="qr_code">Quick Share with QR Code</string>
+    <string name="camera_per">You need accept Camera permission</string>
+    <string name="read_per">Read external storage permission</string>
+    <string name="pre_home">Let\'s start experiencing the app right away</string>
 </resources>

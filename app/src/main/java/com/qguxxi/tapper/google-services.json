@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "644845574814",
+    "project_id": "tapper-fc9ee",
+    "storage_bucket": "tapper-fc9ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644845574814:android:b6bccd5959a043b026b98f",
+        "android_client_info": {
+          "package_name": "com.qguxxi.tapper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvXsfNvCrRr5frKTcFu3M6EXrVGYMqNgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

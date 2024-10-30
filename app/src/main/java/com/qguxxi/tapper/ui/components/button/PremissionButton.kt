@@ -1,6 +1,7 @@
 package com.qguxxi.tapper.ui.components.button
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,31 +26,28 @@ import com.qguxxi.tapper.R
 import com.qguxxi.tapper.ui.theme.figmaTypography
 
 @Composable
-fun PermissionButton(permClick: () -> Unit, @DrawableRes idIcon : Int,modifier: Modifier = Modifier) {
+fun PermissionButton(permClick: () -> Unit,@StringRes idString: Int, @DrawableRes idIcon : Int,modifier: Modifier = Modifier) {
     Button(
         onClick = permClick,
         shape = RoundedCornerShape(10.dp),
         colors = ButtonColors(Color.Black, Color.White, Color.Black, Color.Black),
-        modifier = Modifier
+        modifier = modifier
             .height(36.dp)
-            .width(200.dp)
+            .width(250.dp)
     ) {
         Row(
-            horizontalArrangement = Arrangement.Center,
+            horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth()
+            modifier = modifier.fillMaxWidth()
         ) {
-            Spacer(modifier = Modifier.weight(1f))
             Icon(
                 imageVector = ImageVector.vectorResource(idIcon),
-                contentDescription = "google",
-            )
-            Spacer(modifier = modifier.weight(2f))
+                contentDescription = "google")
             Text(
-                text = stringResource(id = R.string.google),
-                style = figmaTypography.labelSmall,
+                text = stringResource(id = idString),
+
+                style = figmaTypography.labelSmall
             )
-            Spacer(modifier = Modifier.weight(1f))
         }
     }
 }
@@ -57,5 +55,5 @@ fun PermissionButton(permClick: () -> Unit, @DrawableRes idIcon : Int,modifier: 
 @Preview
 @Composable
 private fun IconPreview() {
-    PermissionButton(permClick = { /*TODO*/ }, idIcon = R.drawable.notification)
+    PermissionButton(permClick = { /*TODO*/ }, idIcon = R.drawable.notification, idString = R.string.google_permission)
 }
