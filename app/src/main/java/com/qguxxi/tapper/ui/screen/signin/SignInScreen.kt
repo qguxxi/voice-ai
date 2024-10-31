@@ -1,33 +1,47 @@
 package com.qguxxi.tapper.ui.screen.signin
 
+import android.app.Activity
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.qguxxi.tapper.R
+import com.qguxxi.tapper.navigation.Screen
 import com.qguxxi.tapper.ui.components.button.GoogleButton
 import com.qguxxi.tapper.ui.components.under.PrivacyPolicy
 import com.qguxxi.tapper.ui.theme.figmaTypography
+import com.qguxxi.tapper.untils.google.GoogleSignInViewModel
 
 @Composable
-fun SignInScreen() {
+fun SignInScreen(navController: NavController,viewModel: GoogleSignInViewModel) {
+
+    // Tạo ActivityResultLauncher để xử lý kết quả đăng nhập
+    val launcher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            viewModel.handleSignInResult(result.data)
+            navController.navigate(Screen.NOTIFICATION.name)
+        } else {
+            // Handle error
+        }
+    }
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -41,7 +55,7 @@ fun SignInScreen() {
             modifier = Modifier
                 .padding(vertical = 32.dp)
                 .align(Alignment.CenterHorizontally)
-            )
+        )
         Spacer(modifier = Modifier.weight(5f))
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -51,7 +65,7 @@ fun SignInScreen() {
             Text(text = "Tapper", style = figmaTypography.displayLarge)
         }
         Spacer(modifier = Modifier.weight(5f))
-        GoogleButton(onClick = { /*TODO*/ })
+        GoogleButton(onClick = { launcher.launch(viewModel.signInIntent()) })
         PrivacyPolicy(
             privacyOnClick = { /*TODO*/ },
             termServiceOnClick = { /*TODO*/ },
@@ -59,16 +73,5 @@ fun SignInScreen() {
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
 
-    }
-}
-
-@Preview
-@Composable
-private fun SignInScreenPreview() {
-    MaterialTheme {
-        Surface {
-            SignInScreen()
-
-        }
     }
 }
