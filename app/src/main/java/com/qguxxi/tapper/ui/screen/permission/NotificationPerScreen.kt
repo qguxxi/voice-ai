@@ -1,6 +1,6 @@
 package com.qguxxi.tapper.ui.screen.permission
 
-import android.content.Context
+import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,15 +15,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.qguxxi.tapper.R
 import com.qguxxi.tapper.ui.components.button.PermissionButton
 import com.qguxxi.tapper.ui.components.under.PrivacyPolicy
 import com.qguxxi.tapper.ui.theme.figmaTypography
+import com.qguxxi.tapper.untils.permission.requestNotificationPermission
 
 @Composable
-fun NotificationPerScreen(context: Context,notiViewModel: NotificationViewModel = viewModel(), modifier: Modifier = Modifier) {
-
+fun NotificationPerScreen(
+    activity: Activity,
+    navController : NavController,
+    modifier: Modifier = Modifier,
+) {
     Surface(
         modifier = modifier
             .fillMaxSize()
@@ -43,7 +47,7 @@ fun NotificationPerScreen(context: Context,notiViewModel: NotificationViewModel 
             Text(text = "Quick Scan with QR Code", style = figmaTypography.labelLarge)
             Spacer(modifier = Modifier.weight(5f))
             PermissionButton(
-                permClick = { notiViewModel.requestNotificationPermission(context) },
+                permClick = { requestNotificationPermission(activity) },
                 idIcon = R.drawable.notification,
                 idString = R.string.notification)
             PrivacyPolicy(

@@ -1,5 +1,6 @@
 package com.qguxxi.tapper.navigation
 
+import android.app.Activity
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -31,7 +32,7 @@ enum class Screen {
 
 @Composable
 fun TapperNavHost(
-    context: Context,
+    activity: Activity,
     navController: NavHostController = rememberNavController(),
 ) {
     // Khởi tạo ViewModel ở đây để sử dụng lại
@@ -57,7 +58,7 @@ fun TapperNavHost(
             CameraPerScreen()
         }
         composable(route = Screen.NOTIFICATION.name) {
-            NotificationPerScreen(context = context)
+            NotificationPerScreen(activity,navController = navController)
         }
     }
 }

@@ -44,7 +44,6 @@ fun NfcPerScreen(modifier: Modifier = Modifier) {
                 idIcon = R.drawable.nfc,
                 idString = R.string.nfc_per,
                 modifier = Modifier.align(Alignment.CenterHorizontally).width(320.dp),
-                
                 )
             PrivacyPolicy(
                 privacyOnClick = { /*TODO*/ },
