@@ -34,7 +34,6 @@ fun SplashScreen(navController: NavController) {
             modifier = Modifier.size(200.dp)
         )
     }
-    
     LaunchedEffect(Unit) {
         delay(2000)
         navController.navigate(Screen.SIGNIN.name) {
