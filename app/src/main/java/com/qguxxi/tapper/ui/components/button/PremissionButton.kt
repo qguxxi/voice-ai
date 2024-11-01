@@ -4,7 +4,6 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
@@ -26,7 +25,7 @@ import com.qguxxi.tapper.R
 import com.qguxxi.tapper.ui.theme.figmaTypography
 
 @Composable
-fun PermissionButton(permClick: () -> Unit,@StringRes idString: Int, @DrawableRes idIcon : Int,modifier: Modifier = Modifier) {
+fun PermissionButton(permClick:() -> Unit, @StringRes idString: Int, @DrawableRes idIcon : Int, modifier: Modifier = Modifier) {
     Button(
         onClick = permClick,
         shape = RoundedCornerShape(10.dp),
@@ -42,7 +41,9 @@ fun PermissionButton(permClick: () -> Unit,@StringRes idString: Int, @DrawableRe
         ) {
             Icon(
                 imageVector = ImageVector.vectorResource(idIcon),
-                contentDescription = "google")
+                contentDescription = "google",
+                tint = Color.Unspecified
+                )
             Text(
                 text = stringResource(id = idString),
 

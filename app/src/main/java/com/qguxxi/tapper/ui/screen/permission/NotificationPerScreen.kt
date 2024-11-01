@@ -16,11 +16,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.qguxxi.tapper.MainActivity
 import com.qguxxi.tapper.R
 import com.qguxxi.tapper.ui.components.button.PermissionButton
 import com.qguxxi.tapper.ui.components.under.PrivacyPolicy
 import com.qguxxi.tapper.ui.theme.figmaTypography
-import com.qguxxi.tapper.untils.permission.requestNotificationPermission
+import com.qguxxi.tapper.untils.permission.checkAndRequestCameraPermission
+import com.qguxxi.tapper.untils.permission.checkAndRequestNotificationPermission
 
 @Composable
 fun NotificationPerScreen(
@@ -43,11 +46,11 @@ fun NotificationPerScreen(
                 tint = Color.Unspecified
             )
             Spacer(modifier = Modifier.weight(5f))
-            Text(text = "Quick Share with NFC", style = figmaTypography.bodyMedium)
+            Text(text = "Learn Quickly with AI", style = figmaTypography.bodyMedium)
             Text(text = "Quick Scan with QR Code", style = figmaTypography.labelLarge)
             Spacer(modifier = Modifier.weight(5f))
             PermissionButton(
-                permClick = { requestNotificationPermission(activity) },
+                permClick = { checkAndRequestNotificationPermission(navController = navController, activity = activity) },
                 idIcon = R.drawable.notification,
                 idString = R.string.notification)
             PrivacyPolicy(
@@ -63,4 +66,5 @@ fun NotificationPerScreen(
 @Preview
 @Composable
 private fun NotificationPreview() {
+    NotificationPerScreen(activity = MainActivity(), navController = rememberNavController())
 }
