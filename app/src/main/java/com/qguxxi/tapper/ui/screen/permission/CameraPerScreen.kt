@@ -1,5 +1,6 @@
 package com.qguxxi.tapper.ui.screen.permission
 
+import android.app.Activity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,19 +16,22 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.qguxxi.tapper.MainActivity
 import com.qguxxi.tapper.R
 import com.qguxxi.tapper.ui.components.button.PermissionButton
 import com.qguxxi.tapper.ui.components.under.PrivacyPolicy
 import com.qguxxi.tapper.ui.theme.figmaTypography
+import com.qguxxi.tapper.untils.permission.checkAndRequestCameraPermission
 
 @Composable
-fun CameraPerScreen(modifier: Modifier = Modifier) {
+fun CameraPerScreen(navController: NavController,activity: Activity,modifier: Modifier = Modifier) {
     Surface(
-        modifier =  Modifier.fillMaxSize()
+        modifier =  modifier.fillMaxSize()
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
         ) {
             Spacer(modifier = Modifier.weight(3f))
             Icon(
@@ -35,22 +39,23 @@ fun CameraPerScreen(modifier: Modifier = Modifier) {
                 contentDescription = null,
                 tint = Color.Unspecified
             )
-            Spacer(modifier = Modifier.weight(5f))
-            Text(text = "Quick Share with NFC", style = figmaTypography.bodyMedium)
-            Text(text = "Quick Scan with QR Code", style = figmaTypography.labelLarge)
-            Spacer(modifier = Modifier.weight(5f))
+            Spacer(modifier = modifier.weight(5f))
+            Text(text = "Learn Quickly with AI", style = figmaTypography.bodyMedium)
+            Text(text = "Improve Swiftly with Tapper", style = figmaTypography.labelLarge)
+            Spacer(modifier = modifier.weight(5f))
             PermissionButton(
-                permClick = { /*TODO*/ },
-                idIcon = R.drawable.nfc,
+                permClick = { checkAndRequestCameraPermission(navController = navController, activity = activity) },
+                idIcon = R.drawable.camera,
                 idString = R.string.camera,
                 modifier = Modifier
-                    .align(Alignment.CenterHorizontally).padding(end = 16.dp)
+                    .align(Alignment.CenterHorizontally)
+                    .padding(end = 16.dp)
                 )
             PrivacyPolicy(
                 privacyOnClick = { /*TODO*/ },
                 termServiceOnClick = { /*TODO*/ },
                 stringIdRes = R.string.camera_per,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
+                modifier = modifier.align(Alignment.CenterHorizontally)
             )
         }
     }
@@ -59,5 +64,5 @@ fun CameraPerScreen(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun CameraPerScreenPreview() {
-    CameraPerScreen()
+    CameraPerScreen(navController = rememberNavController(), activity = MainActivity())
 }

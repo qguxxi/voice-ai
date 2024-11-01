@@ -1,20 +1,21 @@
 package com.qguxxi.tapper.navigation
 
 import android.app.Activity
-import android.content.Context
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.remember
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.qguxxi.tapper.MainActivity
+import com.qguxxi.tapper.ui.screen.home.HomeScreen
 import com.qguxxi.tapper.ui.screen.permission.CameraPerScreen
-import com.qguxxi.tapper.ui.screen.permission.NfcPerScreen
 import com.qguxxi.tapper.ui.screen.permission.NotificationPerScreen
 import com.qguxxi.tapper.ui.screen.permission.PreHomeScreen
+import com.qguxxi.tapper.ui.screen.permission.ReadExternalScreen
 import com.qguxxi.tapper.ui.screen.signin.SignInScreen
 import com.qguxxi.tapper.ui.screen.splash.SplashScreen
 import com.qguxxi.tapper.untils.google.GoogleSignInViewModel
@@ -24,10 +25,9 @@ enum class Screen {
     SPLASH,
     SIGNIN,
     PREHOME,
-    NFC,
     CAMERAPER,
-    READEXTERNAL,
     NOTIFICATION,
+    READEXTERNAL
 }
 
 @Composable
@@ -46,16 +46,16 @@ fun TapperNavHost(
             SignInScreen(navController,viewModel = signInViewModel)
         }
         composable(route = Screen.HOME.name) {
-            // HomeScreen()
+            HomeScreen()
+        }
+        composable(route = Screen.READEXTERNAL.name) {
+            ReadExternalScreen(navController, activity)
         }
         composable(route = Screen.PREHOME.name) {
-            PreHomeScreen()
-        }
-        composable(route = Screen.NFC.name) {
-            NfcPerScreen()
+            PreHomeScreen(navController = navController)
         }
         composable(route = Screen.CAMERAPER.name) {
-            CameraPerScreen()
+            CameraPerScreen(navController, activity)
         }
         composable(route = Screen.NOTIFICATION.name) {
             NotificationPerScreen(activity,navController = navController)

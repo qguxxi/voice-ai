@@ -37,7 +37,11 @@ fun SignInScreen(navController: NavController,viewModel: GoogleSignInViewModel) 
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             viewModel.handleSignInResult(result.data)
-            navController.navigate(Screen.NOTIFICATION.name)
+            navController.navigate(Screen.NOTIFICATION.name) {
+                popUpTo(Screen.SIGNIN.name) {
+                    inclusive = true
+                }
+            }
         } else {
             // Handle error
         }
