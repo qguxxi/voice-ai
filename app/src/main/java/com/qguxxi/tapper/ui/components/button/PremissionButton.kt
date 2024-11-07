@@ -46,7 +46,6 @@ fun PermissionButton(permClick:() -> Unit, @StringRes idString: Int, @DrawableRe
                 )
             Text(
                 text = stringResource(id = idString),
-
                 style = figmaTypography.labelSmall
             )
         }

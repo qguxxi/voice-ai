@@ -2,16 +2,14 @@ package com.qguxxi.tapper.navigation
 
 import android.app.Activity
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.qguxxi.tapper.MainActivity
 import com.qguxxi.tapper.ui.screen.home.HomeScreen
+import com.qguxxi.tapper.ui.screen.permission.AudioRecordScreen
 import com.qguxxi.tapper.ui.screen.permission.CameraPerScreen
 import com.qguxxi.tapper.ui.screen.permission.NotificationPerScreen
 import com.qguxxi.tapper.ui.screen.permission.PreHomeScreen
@@ -27,7 +25,8 @@ enum class Screen {
     PREHOME,
     CAMERAPER,
     NOTIFICATION,
-    READEXTERNAL
+    READEXTERNAL,
+    AUDIORECORD,
 }
 
 @Composable
@@ -50,6 +49,9 @@ fun TapperNavHost(
         }
         composable(route = Screen.READEXTERNAL.name) {
             ReadExternalScreen(navController, activity)
+        }
+        composable(route = Screen.AUDIORECORD.name) {
+            AudioRecordScreen(navController = navController, activity = activity, modifier = Modifier)
         }
         composable(route = Screen.PREHOME.name) {
             PreHomeScreen(navController = navController)
