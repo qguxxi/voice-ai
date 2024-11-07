@@ -13,10 +13,10 @@
     <string name="nfc_permission">You need accept Nfc permission</string>
     <string name="notification_permission">You need accept notification permission</string>
     <string name="nfc_per">Near field communication permission</string>
-    <string name="nfc_title">Quick Share with NFC</string>
-    <string name="qr_code">Quick Share with QR Code</string>
     <string name="camera_per">You need accept Camera permission</string>
     <string name="read_per">Read external storage permission</string>
+    <string name="audio_record">Audio record permission</string>
     <string name="pre_home">Let\'s start experiencing the app right away</string>
     <string name="your_web_client_id">644845574814-auq07lljn46fj7lh9cndmaora73btjji.apps.googleusercontent.com</string>
+    <string name="audio_per">You need accept audio record permission</string>
 </resources>
