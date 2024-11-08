@@ -9,19 +9,19 @@ import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import com.qguxxi.tapper.navigation.Screen
 
-const val AUDIO_PERMISSION_REQUEST_CODE = 1001
+const val CAMERA_PERMISSION_REQUEST_CODE = 1
 
-object AudioRecordPermission {
-    fun checkAndRequestAudioPermission(navController : NavController , activity : Activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+object CameraPermission {
+    fun checkAndRequestCameraPermission(navController : NavController , activity : Activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Chỉ yêu cầu trên Android 13+
             if (ActivityCompat.checkSelfPermission(
                     activity ,
-                    Manifest.permission.RECORD_AUDIO
+                    Manifest.permission.CAMERA
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
                 // Quyền đã được cấp
-                navController.navigate(Screen.PREHOME.name) {
-                    popUpTo(Screen.AUDIORECORD.name) {
+                navController.navigate(Screen.READEXTERNAL.name) {
+                    popUpTo(Screen.CAMERAPER.name) {
                         inclusive = true
                     }
                 }
@@ -30,14 +30,15 @@ object AudioRecordPermission {
                 // Chưa có quyền, yêu cầu quyền
                 ActivityCompat.requestPermissions(
                     activity ,
-                    arrayOf(Manifest.permission.RECORD_AUDIO) ,
-                    AUDIO_PERMISSION_REQUEST_CODE
+                    arrayOf(Manifest.permission.CAMERA) ,
+                    CAMERA_PERMISSION_REQUEST_CODE
                 )
-                navController.navigate(Screen.PREHOME.name) {
-                    popUpTo(Screen.AUDIORECORD.name) {
+                navController.navigate(Screen.READEXTERNAL.name) {
+                    popUpTo(Screen.CAMERAPER.name) {
                         inclusive = true
                     }
                 }
+
             }
         } else {
             // Trường hợp không cần quyền trên Android < 13

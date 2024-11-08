@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tapper</string>
+    <string name="app_name">Sound AI</string>
     <string name="welcome">Welcome to</string>
     <string name="google">Sign in with Google </string>
     <string name="notification">Notification Permission </string>

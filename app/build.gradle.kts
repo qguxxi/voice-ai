@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.qguxxi.tapper"
     compileSdk = 34
 
@@ -52,10 +53,13 @@ android {
 
 dependencies {
 
-//    Animation
+// Animation
     implementation("androidx.compose.animation:animation:1.4.3")
-//    FIrebase
+//  FIrebase
     implementation("com.google.firebase:firebase-firestore")
+
+// Lottie File
+    implementation("com.airbnb.android:lottie-compose:6.3.0")
 
 
     // Import the BoM for the Firebase platform
