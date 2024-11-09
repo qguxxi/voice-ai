@@ -8,6 +8,7 @@ import androidx.compose.ui.text.font.FontWeight
 
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.text.googlefonts.Font
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.qguxxi.tapper.R
@@ -98,6 +99,13 @@ val figmaTypography = Typography(
         fontFamily = bodyFontFamily,
         fontWeight = FontWeight(600),
         color = Color(0xFFFFFFFF),
+    ),
+    titleSmall = TextStyle(
+        fontSize = 12.sp,
+        fontFamily = bodyFontFamily,
+        fontWeight = FontWeight(400),
+        color = Color(0xFF000000),
+        textAlign = TextAlign.Center,
     )
 )
 

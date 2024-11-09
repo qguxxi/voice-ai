@@ -19,4 +19,8 @@
     <string name="pre_home">Let\'s start experiencing the app right away</string>
     <string name="your_web_client_id">644845574814-auq07lljn46fj7lh9cndmaora73btjji.apps.googleusercontent.com</string>
     <string name="audio_per">You need accept audio record permission</string>
+    <string name="ai_warning_1">AI can sometimes provide unreasonable answers</string>
+    <string name="ai_warning_2">Please filter information carefully.</string>
+    <string name="ai">Daisy</string>
+    <string name="chatgpt_api"></string>
 </resources>
