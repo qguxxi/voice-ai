@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sound AI</string>
+    <string name="welcome">Welcome to</string>
+    <string name="google">Sign in with Google </string>
+    <string name="notification">Notification Permission </string>
+    <string name="nfc">Nfc Permission </string>
+    <string name="camera">Camera Permission </string>
+    <string name="storage">Read external storage Permission </string>
+    <string name="privacy">By using the app, you accept our Terms of Service\nand acknowledge reading the Privacy Policy</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_services">Terms of Service</string>
+    <string name="google_permission">You need sign in with Google</string>
+    <string name="nfc_permission">You need accept Nfc permission</string>
+    <string name="notification_permission">You need accept notification permission</string>
+    <string name="nfc_per">Near field communication permission</string>
+    <string name="camera_per">You need accept Camera permission</string>
+    <string name="read_per">Read external storage permission</string>
+    <string name="audio_record">Audio record permission</string>
+    <string name="pre_home">Let\'s start experiencing the app right away</string>
+    <string name="your_web_client_id">644845574814-auq07lljn46fj7lh9cndmaora73btjji.apps.googleusercontent.com</string>
+    <string name="audio_per">You need accept audio record permission</string>
+    <string name="ai_warning_1">AI can sometimes provide unreasonable answers</string>
+    <string name="ai_warning_2">Please filter information carefully.</string>
+    <string name="ai">Daisy</string>
+    <string name="chatgpt_api"></string>
+</resources>
