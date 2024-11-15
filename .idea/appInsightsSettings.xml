@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AppInsightsSettings">
-    <option name="selectedTabId" value="Firebase Crashlytics" />
+    <option name="selectedTabId" value="Android Vitals" />
     <option name="tabSettings">
       <map>
         <entry key="Firebase Crashlytics">
@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.qguxxi.tapper" />
-                  <option name="mobileSdkAppId" value="1:644845574814:android:b6bccd5959a043b026b98f" />
-                  <option name="projectId" value="tapper-fc9ee" />
-                  <option name="projectNumber" value="644845574814" />
+                  <option name="appId" value="com.qguxxi.synthvoice" />
+                  <option name="mobileSdkAppId" value="1:295102468217:android:61ce48385d5b605384c4a8" />
+                  <option name="projectId" value="synthvoice-1e984" />
+                  <option name="projectNumber" value="295102468217" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

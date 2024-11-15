@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "644845574814",
-    "project_id": "tapper-fc9ee",
-    "storage_bucket": "tapper-fc9ee.appspot.com"
+    "project_number": "295102468217",
+    "project_id": "synthvoice-1e984",
+    "storage_bucket": "synthvoice-1e984.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:644845574814:android:b6bccd5959a043b026b98f",
+        "mobilesdk_app_id": "1:295102468217:android:61ce48385d5b605384c4a8",
         "android_client_info": {
-          "package_name": "com.qguxxi.tapper"
+          "package_name": "com.qguxxi.synthvoice"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "530061469984-qftts78p6acbhkstgjtvvfohppspea5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCvXsfNvCrRr5frKTcFu3M6EXrVGYMqNgY"
+          "current_key": "AIzaSyBoToi6RK_t-PWCPkMmrCVb_2bl7WxRpBM"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295102468217-ptmpoeb010m3mfo3tr0407jv3dcdq10c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
